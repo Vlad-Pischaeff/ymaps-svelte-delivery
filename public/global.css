@@ -1,0 +1,127 @@
+* {
+	--bg-color: white;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: #333;
+	padding: 8px;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 0.4em 0;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+}
+
+/* checkboxes */
+.checkboxes {
+	margin: 0;
+	padding: .5rem;
+	list-style-type: none;
+}
+li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: .2rem;
+}
+label {
+	flex: 1 1 65%;
+}
+.styled-checkbox {
+	position: absolute;
+	opacity: 0;
+}
+.styled-checkbox + label {
+	position: relative;
+	cursor: pointer;
+	padding: 0;
+}
+
+/* Box. */
+.styled-checkbox + label:before {
+	content: '';
+	margin-right: 10px;
+	display: inline-block;
+	vertical-align: text-top;
+	width: 20px;
+	height: 20px;
+	background: white;
+	outline: 1px solid #8080806e;
+}
+.styled-checkbox:checked + label:before {
+	background: #f35429;
+}
+.styled-checkbox:checked + label:after {
+	content: '';
+	position: absolute;
+	left: 5px;
+	top: 9px;
+	background: white;
+	width: 2px;
+	height: 2px;
+	box-shadow: 
+		2px 0 0 white,
+		4px 0 0 white,
+		4px -2px 0 white,
+		4px -4px 0 white,
+		4px -6px 0 white,
+		4px -8px 0 white;
+	transform: rotate(45deg);
+}
+.styled-checkbox:hover + label:before {
+	background: #9edbff;
+	outline: 3px solid #8080806e;
+}
