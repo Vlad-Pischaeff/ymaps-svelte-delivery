@@ -8,7 +8,7 @@
   let geoJSON, fileinput, myMap, squareMKAD, polygonMKAD; 
   let deliveryPoints, deliveryPointsUpd, deliveryPointsUpdSorted = [];
   let disabled3 = true, disabled4 = true;
-  let checked2 = false, checked3 = false, checked4 = false;
+  let checked2 = false, checked3 = false, checked4 = false, checked5 = false;
 
   let center = [55.78361503443606, 37.600883000000006];
   let zoom = 11;
@@ -108,6 +108,7 @@
     clearPolygons();
     showPolygons();
   }
+  $: console.log('checked5...', checked5);
 
   $: if (geoJSON) {
       let geoObj = JSON.parse(geoJSON);
@@ -150,10 +151,20 @@
       </ul>
     </section>
 
+    <section class="dphide">
+      <input class="cb_item" id="sc5" type="checkbox"
+              bind:checked={checked5} >
+      <label for="sc5">Hide unused points</label>
+    </section>
+
     <section class="dplist">
       {#if deliveryPointsUpdSorted}
-        {#each deliveryPointsUpdSorted as point }
-          <DeliveryPoint point={point} myMap={myMap} />
+        {#each deliveryPointsUpdSorted as point}
+          {#if (checked5 && point.Show) }
+            <DeliveryPoint point={point} myMap={myMap} />
+          {:else if !checked5 }
+            <DeliveryPoint point={point} myMap={myMap} />
+          {/if}
         {/each}
       {/if}
     </section>
@@ -194,7 +205,9 @@
   .dplist:hover {
     box-shadow: 0 0 20px #80808051;
   }
-
+  .dphide {
+    margin: .2rem;
+  }
   #map {
     width: 720px;
     height: 540px;
