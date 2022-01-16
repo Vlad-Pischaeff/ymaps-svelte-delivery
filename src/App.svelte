@@ -138,17 +138,17 @@
     <section class="dpselection">
       <ul class="checkboxes">
         <li>
-          <input class="styled-checkbox" id="sc2" type="checkbox" value="value2"
+          <input class="styled-checkbox" id="sc2" type="checkbox"
                 bind:checked={checked2} >
           <label for="sc2">Show inside MKAD</label>
         </li>
         <li>
-          <input class="styled-checkbox" id="sc3" type="checkbox" value="value3"
+          <input class="styled-checkbox" id="sc3" type="checkbox"
                 bind:checked={checked3} disabled={disabled3} >
           <label for="sc3" class:disabled={disabled3}>Remove >5% delivery</label>
         </li>
         <li>
-          <input class="styled-checkbox" id="sc4" type="checkbox" value="value4"
+          <input class="styled-checkbox" id="sc4" type="checkbox"
                 bind:checked={checked4} disabled={disabled4}>
           <label for="sc4" class:disabled={disabled4}>Remove overlapping</label>
         </li>
