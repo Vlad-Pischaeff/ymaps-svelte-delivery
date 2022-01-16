@@ -667,7 +667,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (127:2) {#if Loaded === false}
+    // (122:2) {#if Loaded === false}
     function create_if_block_1(ctx) {
     	let h1;
 
@@ -675,7 +675,7 @@ var app = (function () {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "Loading...";
-    			add_location(h1, file, 127, 4, 3937);
+    			add_location(h1, file, 122, 4, 3776);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -689,14 +689,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(127:2) {#if Loaded === false}",
+    		source: "(122:2) {#if Loaded === false}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (159:6) {#if deliveryPointsUpdSorted}
+    // (154:6) {#if deliveryPointsUpdSorted}
     function create_if_block(ctx) {
     	let each_1_anchor;
     	let current;
@@ -785,14 +785,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(159:6) {#if deliveryPointsUpdSorted}",
+    		source: "(154:6) {#if deliveryPointsUpdSorted}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (160:8) {#each deliveryPointsUpdSorted as point }
+    // (155:8) {#each deliveryPointsUpdSorted as point }
     function create_each_block(ctx) {
     	let deliverypoint;
     	let current;
@@ -837,7 +837,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(160:8) {#each deliveryPointsUpdSorted as point }",
+    		source: "(155:8) {#each deliveryPointsUpdSorted as point }",
     		ctx
     	});
 
@@ -918,55 +918,55 @@ var app = (function () {
     			t13 = space();
     			section1 = element("section");
     			if (if_block1) if_block1.c();
-    			add_location(div0, file, 125, 0, 3900);
+    			add_location(div0, file, 120, 0, 3739);
     			attr_dev(div1, "id", "map");
     			attr_dev(div1, "class", "svelte-r9w8e8");
-    			add_location(div1, file, 131, 2, 3985);
+    			add_location(div1, file, 126, 2, 3824);
     			attr_dev(input0, "type", "button");
     			input0.value = "select GeoObject file";
-    			add_location(input0, file, 133, 4, 4022);
+    			add_location(input0, file, 128, 4, 3861);
     			set_style(input1, "display", "none");
     			attr_dev(input1, "type", "file");
     			attr_dev(input1, "accept", ".json");
-    			add_location(input1, file, 134, 4, 4114);
+    			add_location(input1, file, 129, 4, 3953);
     			attr_dev(input2, "type", "button");
     			input2.value = "clear map";
-    			add_location(input2, file, 135, 4, 4233);
-    			attr_dev(input3, "class", "styled-checkbox");
+    			add_location(input2, file, 130, 4, 4072);
+    			attr_dev(input3, "class", "cb_item");
     			attr_dev(input3, "id", "sc2");
     			attr_dev(input3, "type", "checkbox");
-    			add_location(input3, file, 140, 10, 4404);
+    			add_location(input3, file, 135, 10, 4235);
     			attr_dev(label0, "for", "sc2");
-    			add_location(label0, file, 142, 10, 4514);
-    			add_location(li0, file, 139, 8, 4388);
-    			attr_dev(input4, "class", "styled-checkbox");
+    			add_location(label0, file, 137, 10, 4337);
+    			add_location(li0, file, 134, 8, 4219);
+    			attr_dev(input4, "class", "cb_item");
     			attr_dev(input4, "id", "sc3");
     			attr_dev(input4, "type", "checkbox");
     			input4.disabled = /*disabled3*/ ctx[5];
-    			add_location(input4, file, 145, 10, 4596);
+    			add_location(input4, file, 140, 10, 4419);
     			attr_dev(label1, "for", "sc3");
     			toggle_class(label1, "disabled", /*disabled3*/ ctx[5]);
-    			add_location(label1, file, 147, 10, 4727);
-    			add_location(li1, file, 144, 8, 4580);
-    			attr_dev(input5, "class", "styled-checkbox");
+    			add_location(label1, file, 142, 10, 4542);
+    			add_location(li1, file, 139, 8, 4403);
+    			attr_dev(input5, "class", "cb_item");
     			attr_dev(input5, "id", "sc4");
     			attr_dev(input5, "type", "checkbox");
     			input5.disabled = /*disabled4*/ ctx[8];
-    			add_location(input5, file, 150, 10, 4839);
+    			add_location(input5, file, 145, 10, 4654);
     			attr_dev(label2, "for", "sc4");
     			toggle_class(label2, "disabled", /*disabled4*/ ctx[8]);
-    			add_location(label2, file, 152, 10, 4969);
-    			add_location(li2, file, 149, 8, 4823);
-    			attr_dev(ul, "class", "checkboxes");
-    			add_location(ul, file, 138, 6, 4355);
+    			add_location(label2, file, 147, 10, 4776);
+    			add_location(li2, file, 144, 8, 4638);
+    			attr_dev(ul, "class", "cb");
+    			add_location(ul, file, 133, 6, 4194);
     			attr_dev(section0, "class", "dpselection svelte-r9w8e8");
-    			add_location(section0, file, 137, 4, 4318);
+    			add_location(section0, file, 132, 4, 4157);
     			attr_dev(section1, "class", "dplist svelte-r9w8e8");
-    			add_location(section1, file, 157, 4, 5091);
+    			add_location(section1, file, 152, 4, 4898);
     			attr_dev(aside, "class", "svelte-r9w8e8");
-    			add_location(aside, file, 132, 2, 4009);
+    			add_location(aside, file, 127, 2, 3848);
     			attr_dev(main, "class", "svelte-r9w8e8");
-    			add_location(main, file, 130, 0, 3975);
+    			add_location(main, file, 125, 0, 3814);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1147,20 +1147,17 @@ var app = (function () {
 
     	// очищаем карту от полигонов
     	function clearPolygons() {
-    		deliveryPointsUpdSorted && deliveryPointsUpdSorted.forEach(n => myMap.geoObjects.remove(n.Polygon));
+    		deliveryPointsUpdSorted.forEach(n => myMap.geoObjects.remove(n.Polygon));
     	}
 
     	// русуем все полигоны
     	const showPolygons = () => {
-    		deliveryPointsUpdSorted.forEach(n => {
-    			// n.Square/squareMKAD*100 < 5  &&  myMap.geoObjects.add(n.Polygon);
-    			myMap.geoObjects.add(n.Polygon);
-    		});
+    		deliveryPointsUpdSorted.forEach(n => myMap.geoObjects.add(n.Polygon));
     	};
 
     	// показываем все полигоны
     	const getAllPolygons = () => {
-    		deliveryPointsUpdSorted && deliveryPointsUpdSorted.forEach(n => n.Show = true);
+    		deliveryPointsUpdSorted.forEach(n => n.Show = true);
     		$$invalidate(0, deliveryPointsUpdSorted = [...deliveryPointsUpdSorted]);
     	};
 

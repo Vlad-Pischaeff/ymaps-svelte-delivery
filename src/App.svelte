@@ -34,22 +34,17 @@
 
   // очищаем карту от полигонов
   function clearPolygons() {
-    deliveryPointsUpdSorted &&
-      deliveryPointsUpdSorted.forEach(n => myMap.geoObjects.remove(n.Polygon));
+    deliveryPointsUpdSorted.forEach(n => myMap.geoObjects.remove(n.Polygon));
   }
   
   // русуем все полигоны
   const showPolygons = () => {
-    deliveryPointsUpdSorted.forEach(n => {
-      // n.Square/squareMKAD*100 < 5  &&  myMap.geoObjects.add(n.Polygon);
-      myMap.geoObjects.add(n.Polygon);
-    });
+    deliveryPointsUpdSorted.forEach(n => myMap.geoObjects.add(n.Polygon));
   }
 
   // показываем все полигоны
   const getAllPolygons = () => {
-    deliveryPointsUpdSorted &&
-      deliveryPointsUpdSorted.forEach(n => n.Show = true);
+    deliveryPointsUpdSorted.forEach(n => n.Show = true);
     deliveryPointsUpdSorted = [...deliveryPointsUpdSorted];
   }
 
@@ -136,19 +131,19 @@
     <input type="button" value="clear map" on:click={removeDeliveryPolygons}>
     
     <section class="dpselection">
-      <ul class="checkboxes">
+      <ul class="cb">
         <li>
-          <input class="styled-checkbox" id="sc2" type="checkbox"
+          <input class="cb_item" id="sc2" type="checkbox"
                 bind:checked={checked2} >
           <label for="sc2">Show inside MKAD</label>
         </li>
         <li>
-          <input class="styled-checkbox" id="sc3" type="checkbox"
+          <input class="cb_item" id="sc3" type="checkbox"
                 bind:checked={checked3} disabled={disabled3} >
           <label for="sc3" class:disabled={disabled3}>Remove >5% delivery</label>
         </li>
         <li>
-          <input class="styled-checkbox" id="sc4" type="checkbox"
+          <input class="cb_item" id="sc4" type="checkbox"
                 bind:checked={checked4} disabled={disabled4}>
           <label for="sc4" class:disabled={disabled4}>Remove overlapping</label>
         </li>
