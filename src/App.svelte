@@ -8,7 +8,7 @@
   let geoJSON, fileinput, myMap, squareMKAD, polygonMKAD; 
   let deliveryPoints, deliveryPointsUpd, deliveryPointsUpdSorted = [];
   let disabled3 = true, disabled4 = true;
-  let checked2 = false, checked3 = false;
+  let checked2 = false, checked3 = false, checked4 = false;
 
   let center = [55.78361503443606, 37.600883000000006];
   let zoom = 11;
@@ -148,7 +148,8 @@
           <label for="sc3" class:disabled={disabled3}>Remove >5% delivery</label>
         </li>
         <li>
-          <input class="styled-checkbox" id="sc4" type="checkbox" value="value4">
+          <input class="styled-checkbox" id="sc4" type="checkbox" value="value4"
+                bind:checked={checked4} disabled={disabled4}>
           <label for="sc4" class:disabled={disabled4}>Remove overlapping</label>
         </li>
       </ul>
