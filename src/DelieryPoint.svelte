@@ -14,7 +14,7 @@
 
   $: {
     show = point.Show ? true : false;
-    console.log('show', point.Name, point.Show)
+    // console.log('show', point.Name, point.Show)
     }
 </script>
 

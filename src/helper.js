@@ -191,3 +191,64 @@ export const swapXY = (arr) => {
 export const setLines = (arr) => {
 	return arr.map(n => ({ 'x': n[0], 'y': n[1] }));
 }
+
+  /**
+   * get lines intersections coordinates & locations 
+   * 
+   * @param {Array} arr1 [{'x': xCoord, 'y': yCoord}, {}...]
+   * @param {Array} arr2 [{'x': xCoord, 'y': yCoord}, {}...]
+   * 
+   * @return {Object} {'locations':[[x, y], []...], 'intersections': [{'x': i, 'y': j, 'px': p.x, 'py': p.y, 'coord': [p.x, p.y]}, {}...]}
+   */
+   const getIntersections = (arr1, arr2) => {
+    let locations = [], intersections = [];
+    for (let i = 0; i < arr1.length-1; i++) {
+      for (let j = 0; j < arr2.length-1; j++) {
+        let p = intersect(arr1[i]['x'],   arr1[i]['y'], 
+                          arr1[i+1]['x'], arr1[i+1]['y'], 
+                          arr2[j]['x'],   arr2[j]['y'],
+                          arr2[j+1]['x'], arr2[j+1]['y']);
+        if (p) {
+          locations.push([p.x, p.y]);
+          intersections = [ ...intersections, {'x': i, 'y': j, 'px': p.x, 'py': p.y, 'coord': [p.x, p.y]}];
+        }
+      }
+    }
+    return { 'locations': locations, 'intersections': intersections };
+  }
+  /**
+   * make 2 polygons from 1 with borders between intersections
+   * 
+   * @param {Array} arr coordinates of source polygon
+   * @param {Array} its intersections coordinates
+   * @prarm {String} index choose first or second polygon ('x' or 'y')
+   * 
+   * @return {Object} object of border coordinates of 2 polygons { 'Bounds1': [], 'Bounds2': []} 
+   */
+  const getSplittedPlygons = (arr, its, index) => {
+    //
+    // swap values [its] array if idx > idxNext
+    //
+    let idx = its[0][index];
+    let idxNext = its[1][index];
+
+    if (idx > idxNext) {
+      [its[0], its[1]] = [its[1], its[0]];
+      idx = its[0][index];
+      idxNext = its[1][index];
+    }
+    //
+    // calculate length of two polygons without intersections 
+    //
+    let len1 = Math.abs(idx - idxNext);
+    let len2 = arr.length - len1- idx;
+    //
+    // calculate two polygons coordinates with intersections
+    //
+    let Bounds1 = [ ...arr];
+    Bounds1.splice(idx + 1, len1, its[0].coord, its[1].coord);
+    let Bounds2 = [ ...arr];
+    Bounds2.splice(idxNext + 1, len2, its[1].coord, its[0].coord);
+    Bounds2.splice(0, idx + 1, its[0].coord);
+    return { Bounds1, Bounds2 };
+  }

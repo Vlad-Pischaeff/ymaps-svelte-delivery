@@ -125,3 +125,6 @@ label {
 	background: #9edbff;
 	outline: 3px solid #8080806e;
 }
+.disabled {
+  color: #888;
+}
