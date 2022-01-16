@@ -95,7 +95,11 @@
 
   $: checked2 ? getPolygonsInsideMKAD() : getAllPolygons();
 
-  $: checked3 ? showPolygons5() : getPolygonsInsideMKAD();
+  $: if (checked3) {
+      showPolygons5();
+    } else {
+      checked2 && getPolygonsInsideMKAD();
+    }
 
   $: disabled3 = checked2 ? false : true;
 
