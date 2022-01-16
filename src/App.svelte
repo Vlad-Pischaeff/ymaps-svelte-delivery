@@ -108,7 +108,6 @@
     clearPolygons();
     showPolygons();
   }
-  $: console.log('checked5...', checked5);
 
   $: if (geoJSON) {
       let geoObj = JSON.parse(geoJSON);
