@@ -163,11 +163,7 @@
     <section class="dplist">
       {#if deliveryPointsUpdSorted}
         {#each deliveryPointsUpdSorted as point}
-          {#if (checked5 && point.Show) }
-            <DeliveryPoint point={point} myMap={myMap} />
-          {:else if !checked5 }
-            <DeliveryPoint point={point} myMap={myMap} />
-          {/if}
+          <DeliveryPoint point={point} myMap={myMap} checked5={checked5}/>
         {/each}
       {/if}
     </section>

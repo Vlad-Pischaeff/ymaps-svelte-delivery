@@ -1,6 +1,6 @@
 <script>
-  export let point, myMap;
-  let show = true, display = 'block', bgColor;
+  export let point, myMap, checked5;
+  let show = true, display = 'block', bgColor, hidden = false;
 
   $: show  
       ? myMap.geoObjects.add(point.Polygon)
@@ -12,13 +12,15 @@
 
   $: display = show ? 'block' : 'none';
 
-  $: {
-    show = point.Show ? true : false;
-    // console.log('show', point.Name, point.Show)
-    }
+  $: show = point.Show ? true : false;
+
+  $: hidden = ( checked5 && !point.Show )
+      ? true
+      : false;
+
 </script>
 
-<div class="item">
+<div class={hidden ? "item none" : "item"}>
   <div  class="item_box"
         style="--bg-color: {bgColor}; --display: {display}" 
         on:click={() => show = !show}>
@@ -28,6 +30,9 @@
 </div>
 
 <style>
+  .none {
+    display: none !important;
+  }
   .item {
     display: flex;
     align-items: center;
